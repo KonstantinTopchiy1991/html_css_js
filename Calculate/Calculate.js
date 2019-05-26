@@ -1,102 +1,100 @@
-let numbersBtn = document.querySelectorAll('.number');
-let operationsBtn = document.querySelectorAll('.operation');
-let decimalBtn = document.getElementById('decimal');
-let clearBtns = document.querySelectorAll('.clear-btn');
-let display = document.getElementById('display');
-let memoryNewNumber = false;
-let memoryCurrentNumber = 0;
-let memoryPandingOperation = '';
+let display = document.querySelector('.display');
+
+let calculate = document.querySelector('.calculate');
+
+const handler = new Calculate(display);
+
+calculate.onclick = function (event) {
+    let element = event.target;
+    let classList = Array.from(element.classList);
+    if (!classList.includes('button')) {
+        return;
+    }
+    let operationBtn = element.textContent;
+    display.innerHTML = handler.operation(operationBtn);
+};
+
+function Calculate() {
+
+    this.memoryResult = '';
+
+    this.memoryCurrentNumber = '';
+
+    this.pendingOperation = '';
 
 
+    this.operation = function (symbol) {
 
-for (let i = 0; i < numbersBtn.length; i++) {
-    let number = numbersBtn[i];
-    number.addEventListener('click', function (e) {
-        numberPress(e.target.textContent);
-    })
-}
+        if (!['+', '-', '/', '*', 'ce', 'c', '='].includes(symbol)) {
 
-for (let i = 0; i < operationsBtn.length; i++) {
-    let operations = operationsBtn[i];
-    operations.addEventListener('click', function (e) {
-        operation(e.target.textContent);
-    })
-}
+            if (this.isSymbolPointAndContainsInNumber(symbol)) {
+                return this.memoryCurrentNumber;
+            }
+            this.memoryCurrentNumber = this.memoryCurrentNumber.toString() + symbol;
+            return this.memoryCurrentNumber;
+        }
 
-for (let i = 0; i < clearBtns.length; i++) {
-    let clearBtn = clearBtns[i];
-    clearBtn.addEventListener('click', function (e) {
-        clear(e.target.id);
-    })
-}
+        if (symbol === 'ce') {
+            this.memoryCurrentNumber = '0';
+            return this.memoryResult;
+        } else if (symbol === 'c') {
+            this.memoryResult = '';
+            this.memoryCurrentNumber = '';
+            this.pendingOperation = '';
+            return '0';
+        }
 
-decimalBtn.addEventListener('click', decimal);
+        let result = this.memoryCurrentNumber;
 
-function numberPress(number) {
-    if (memoryNewNumber){
-            display.value = number;
-            memoryNewNumber = false;
-    } else {
-        if (display.value == 0){
-            display.value = number;
+        if (this.canExecuteOperation()) {
+            result = this.executeOperation();
+        }
+
+        if (symbol === '=') {
+            this.pendingOperation = '';
         } else {
-            display.value += number;
+            this.pendingOperation = symbol;
         }
-    }
-}
-
-function operation(op) {
-    let localOperation = display.value;
-    if (memoryNewNumber && memoryPandingOperation !== '='){
-        display.value = memoryCurrentNumber;
-    } else {
-        memoryNewNumber = true;
-        if (memoryPandingOperation === '+'){
-            memoryCurrentNumber += parseFloat(localOperation);
-        } else if (memoryPandingOperation === '-') {
-           memoryCurrentNumber -= parseFloat(localOperation);
-        } else if (memoryPandingOperation === '/') {
-            memoryCurrentNumber /= parseFloat(localOperation);
-        } else if (memoryPandingOperation === '*') {
-            memoryCurrentNumber *= parseFloat(localOperation);
-        } else {
-            memoryCurrentNumber = parseFloat(localOperation);
+        if (result !== '') {
+            this.memoryResult = result;
         }
-        display.value = formatResult(memoryCurrentNumber);
-        memoryPandingOperation = op;
-    }
-}
+        this.memoryCurrentNumber = '';
 
-function formatResult(result) {
-    let formatted = result.toString();
-
-    return formatted.substring(0, 8);
-}
-
-function decimal(value) {
-    let localDecimalMemory = display.value;
-
-    if (memoryNewNumber){
-        localDecimalMemory = '0.';
-        memoryNewNumber = false;
-    } else {
-        if (localDecimalMemory.indexOf('.') === -1) {
-            localDecimalMemory += '.';
+        if (symbol === 'ce') {
+            this.memoryResult = '0';
+            this.memoryCurrentNumber = true;
         }
-    }
-    display.value = localDecimalMemory;
-}
 
-function clear(id) {
-    if (id === 'ce') {
-        display.value = '0';
-        memoryNewNumber = true;
-    } else if (id === 'c') {
-        display.value = '0';
-        memoryNewNumber = true;
-        memoryCurrentNumber = 0;
-        memoryPandingOperation = '';
-    }
+        return this.memoryResult;
+    };
+
+    this.canExecuteOperation = function () {
+        return this.memoryResult && this.pendingOperation && this.memoryCurrentNumber;
+    };
+
+    this.isSymbolPointAndContainsInNumber = function (symbol) {
+        return symbol === '.' && this.memoryCurrentNumber.includes('.')
+    };
+
+    this.formatResult = function (result) {
+        let formatted = result.toString();
+        return formatted.substring(0, 8);
+    };
+
+    this.executeOperation = function () {
+        let result;
+        if (this.pendingOperation === '+') {
+            result = parseFloat(this.memoryResult) + parseFloat(this.memoryCurrentNumber);
+        } else if (this.pendingOperation === '-') {
+            result = parseFloat(this.memoryResult) - parseFloat(this.memoryCurrentNumber);
+        } else if (this.pendingOperation === '/') {
+            result = parseFloat(this.memoryResult) / parseFloat(this.memoryCurrentNumber);
+        } else if (this.pendingOperation === '*') {
+            result = parseFloat(this.memoryResult) * parseFloat(this.memoryCurrentNumber);
+        }
+
+        return this.formatResult(result);
+    };
 }
 
 
