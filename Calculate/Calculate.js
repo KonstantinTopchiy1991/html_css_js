@@ -1,18 +1,18 @@
-let display = document.querySelector('.display');
+let display = document.querySelector('.elem__display');
 
 let calculate = document.querySelector('.calculate');
 
 const handler = new Calculate(display);
 
-calculate.onclick = function (event) {
+calculate.addEventListener('click', function (event) {
     let element = event.target;
     let classList = Array.from(element.classList);
-    if (!classList.includes('button')) {
+    if (!classList.includes('elem__button')) {
         return;
     }
     let operationBtn = element.textContent;
     display.innerHTML = handler.operation(operationBtn);
-};
+});
 
 function Calculate() {
 
@@ -31,11 +31,11 @@ function Calculate() {
                 return this.memoryCurrentNumber;
             }
             this.memoryCurrentNumber = this.memoryCurrentNumber.toString() + symbol;
-            return this.memoryCurrentNumber;
+            return this.memoryCurrentNumber.substring(0, 8);
         }
 
         if (symbol === 'ce') {
-            this.memoryCurrentNumber = '0';
+            this.memoryCurrentNumber = '';
             return this.memoryResult;
         } else if (symbol === 'c') {
             this.memoryResult = '';
@@ -44,7 +44,7 @@ function Calculate() {
             return '0';
         }
 
-        let result = this.memoryCurrentNumber;
+        let result = this.memoryCurrentNumber.substring(0, 8);
 
         if (this.canExecuteOperation()) {
             result = this.executeOperation();
@@ -59,12 +59,6 @@ function Calculate() {
             this.memoryResult = result;
         }
         this.memoryCurrentNumber = '';
-
-        if (symbol === 'ce') {
-            this.memoryResult = '0';
-            this.memoryCurrentNumber = true;
-        }
-
         return this.memoryResult;
     };
 
@@ -78,22 +72,23 @@ function Calculate() {
 
     this.formatResult = function (result) {
         let formatted = result.toString();
-        return formatted.substring(0, 8);
+        return parseFloat(formatted.substring(0, 8));
     };
 
     this.executeOperation = function () {
         let result;
-        if (this.pendingOperation === '+') {
-            result = parseFloat(this.memoryResult) + parseFloat(this.memoryCurrentNumber);
-        } else if (this.pendingOperation === '-') {
-            result = parseFloat(this.memoryResult) - parseFloat(this.memoryCurrentNumber);
-        } else if (this.pendingOperation === '/') {
-            result = parseFloat(this.memoryResult) / parseFloat(this.memoryCurrentNumber);
-        } else if (this.pendingOperation === '*') {
-            result = parseFloat(this.memoryResult) * parseFloat(this.memoryCurrentNumber);
-        }
+        let round = 10000000;
+            if (this.pendingOperation === '+') {
+                result = parseFloat(this.memoryResult) + parseFloat(this.memoryCurrentNumber);
+            } else if (this.pendingOperation === '-') {
+                result = (parseFloat(this.memoryResult)*round - parseFloat(this.memoryCurrentNumber)*round)/round;
+            } else if (this.pendingOperation === '/') {
+                result = parseFloat(this.memoryResult) / parseFloat(this.memoryCurrentNumber);
+            } else if (this.pendingOperation === '*') {
+                result = parseFloat(this.memoryResult) * parseFloat(this.memoryCurrentNumber);
+            }
 
-        return this.formatResult(result);
+            return this.formatResult(result);
     };
 }
 
