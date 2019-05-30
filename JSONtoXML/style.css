@@ -1,0 +1,40 @@
+.json2xml {
+    width: 400px;
+    height: 550px;
+    border-radius: 10px;
+    float: left;
+    margin:5px 200px 50px 500px;
+}
+
+.json2xml__title {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+.json2xml__elem {
+    display: flex;
+    justify-content: space-around;
+}
+
+.elem__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font: 30px 'Orbitron', sans-serif;
+    height: 50px;
+    text-transform: uppercase;
+    background: #849f7e;
+    border: 2px solid #eaeaea;
+    border-radius: 5px;
+    color: #666;
+}
+
+.elem__button:hover {
+    color: #fcfcfc;
+    background: #d45757;
+    border-color: #d45757;
+    cursor: pointer;
+}

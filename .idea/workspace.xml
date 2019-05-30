@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12fdcf9a-0994-4e2c-bcf7-f54a4e03cffd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/JSONtoXML/JsJson.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSONtoXML/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSONtoXML/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSONtoXML/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSONtoXML/testFile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculate/Calculate.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calculate/Calculate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculate/Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calculate/Test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculate/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calculate/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculate/less.less" beforeDir="false" afterPath="$PROJECT_DIR$/Calculate/less.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +20,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Calculate/Calculate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+            <state relative-caret-position="645">
+              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Calculate/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../LessonTest/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="60">
+                <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="28" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -49,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Calculate/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
+            <state relative-caret-position="885">
               <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
@@ -112,6 +134,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,11 +147,15 @@
               <item name="HTML+JS+CSS" type="462c0819:PsiDirectoryNode" />
               <item name="Calculate" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HTML+JS+CSS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HTML+JS+CSS" type="462c0819:PsiDirectoryNode" />
+              <item name="JSONtoXML" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,16 +216,16 @@
       <workItem from="1559054541012" duration="3227000" />
       <workItem from="1559071544528" duration="211000" />
       <workItem from="1559129245710" duration="620000" />
-      <workItem from="1559247754321" duration="1226000" />
+      <workItem from="1559247754321" duration="1680000" />
+      <workItem from="1559249580894" duration="652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111797000" />
+    <option name="totallyTimeSpent" value="112903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960877" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -212,7 +239,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.46926537" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.44527736" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -258,11 +285,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../LessonTest/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/Calculate/Calculate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -287,6 +313,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Calculate/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Calculate/Test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -301,17 +334,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Calculate/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Calculate/Calculate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+    <entry file="file://$PROJECT_DIR$/../LessonTest/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="28" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
