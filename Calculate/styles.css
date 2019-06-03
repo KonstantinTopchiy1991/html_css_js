@@ -44,8 +44,7 @@
     height: 50px;
     text-transform: uppercase;
     background: #aebcfc;
-    border: 2px solid #eaeaea;
-    border-radius: 5px;
+    border: 1px solid #eaeaea;
     color: #666;
 }
 .elem__button:hover {

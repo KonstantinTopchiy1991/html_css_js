@@ -1,0 +1,44 @@
+.BSTree {
+    width:600px;
+    height:450px;
+    background-color: burlywood;
+    margin: 100px 100px 50px 250px;
+}
+
+.BSTree__title {
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    text-transform: uppercase;
+}
+
+.add {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+}
+
+.get {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+}
+
+.remove {
+    width: 60px;
+    height: 40px;
+    background-color: gray;
+}
+
+.clear {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+}
+
+.header__input {
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    text-align: center;
+}
