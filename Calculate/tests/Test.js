@@ -1,3 +1,6 @@
+import Calculate from '../model/Calculate.js';
+var assert = chai.assert;
+
 describe('plus works calculate', function () {
 
     const testedData = [

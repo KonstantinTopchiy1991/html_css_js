@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js" ></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js" ></script>
+<!--    &lt;!&ndash; настраиваем Mocha: предстоит TDD-тестирование &ndash;&gt;-->
+    <script type="module">
+        mocha.setup('bdd');
+    </script>
+
+</head>
+
+<body>
+
+<!--<script src="../model/Calculate.js" type="module"></script>-->
+
+<!--&lt;!&ndash; в этом скрипте находятся спеки &ndash;&gt;-->
+<script src="../tests/Test.js" type="module"></script>
+
+<!-- в элементе с id="mocha" будут результаты тестов -->
+<div id="mocha"></div>
+<!--&lt;!&ndash; запустить тесты! &ndash;&gt;-->
+<script type="module">
+    mocha.run();
+</script>
+</body>
+
+</html>
