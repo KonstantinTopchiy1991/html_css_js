@@ -7,26 +7,32 @@
     <!-- подключаем стили Mocha, для отображения результатов -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
     <!-- подключаем библиотеку Mocha -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js" ></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js" ></script>
-<!--    &lt;!&ndash; настраиваем Mocha: предстоит TDD-тестирование &ndash;&gt;-->
-    <script type="module">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит TDD-тестирование -->
+    <script>
         mocha.setup('bdd');
     </script>
 
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
 </head>
 
 <body>
 
-<!--<script src="../model/Calculate.js" type="module"></script>-->
+<script src="../model/Calculate.js"></script>
 
-<!--&lt;!&ndash; в этом скрипте находятся спеки &ndash;&gt;-->
-<script src="../tests/Test.js" type="module"></script>
+<!-- в этом скрипте находятся спеки -->
+<script src="../tests/Test.js"></script>
 
 <!-- в элементе с id="mocha" будут результаты тестов -->
 <div id="mocha"></div>
-<!--&lt;!&ndash; запустить тесты! &ndash;&gt;-->
-<script type="module">
+
+<!-- запустить тесты! -->
+<script>
     mocha.run();
 </script>
 </body>

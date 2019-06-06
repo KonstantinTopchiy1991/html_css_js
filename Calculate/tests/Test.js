@@ -1,6 +1,3 @@
-import Calculate from '../model/Calculate.js';
-var assert = chai.assert;
-
 describe('plus works calculate', function () {
 
     const testedData = [
@@ -11,10 +8,6 @@ describe('plus works calculate', function () {
         {
             'symbols': ['3', '5', '+', '1', '1', '='],
             'expected': '46'
-        },
-        {
-            'symbols': ['NaN', '+', '1', '1', '='],
-            'expected': 'NaN'
         },
         {
             'symbols': ['8', '+', '2', '1', '='],
@@ -42,7 +35,7 @@ describe('plus works calculate', function () {
                 calculate.operation(symbol);
             }
 
-            assert.equal(calculate.memoryResult, testSuit['expected']);
+            assert.equal(testSuit['expected'], calculate.memoryResult );
         });
     }
 });
@@ -112,10 +105,6 @@ describe('multiplication works calculate', function () {
         {
             'symbols': ['4', '3', '*', '0', '='],
             'expected': '0'
-        },
-        {
-            'symbols': ['NaN', '*', '7', '='],
-            'expected': 'NaN'
         }
     ];
 
@@ -158,10 +147,6 @@ describe('divide works calculate', function () {
         {
             'symbols': ['2', '4', '/', '0', '='],
             'expected': 'Infinity'
-        },
-        {
-            'symbols': ['0', '/', '0', '='],
-            'expected': 'NaN'
         }
     ];
 
@@ -262,3 +247,6 @@ describe('C works calculate', function () {
         });
     }
 });
+
+
+
